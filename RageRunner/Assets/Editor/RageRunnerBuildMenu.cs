@@ -1,0 +1,2 @@
+using UnityEditor; using UnityEditor.SceneManagement; using UnityEngine;
+public static class RageRunnerBuildMenu { [MenuItem("Rage Runner/Play Game")] public static void Play(){EditorSceneManager.OpenScene("Assets/_Game/Scenes/RageRunner.unity"); EditorApplication.isPlaying=true;} [MenuItem("Rage Runner/Build Android") ] public static void Android(){EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Android,BuildTarget.Android);}}
