@@ -1,0 +1,10 @@
+flowchart LR
+ A[Upload image] --> B[Flask validation]
+ B --> C[Resize 224x224 / normalize]
+ C --> D[Saved MobileNetV2 model]
+ D --> E{Confidence >= 0.55?}
+ E -->|Yes| F[Category + disposal guidance]
+ E -->|No| G[Uncertain result]
+ F --> H[(SQLite prediction history)]
+ G --> H
+ H --> I[History and dashboard APIs]
